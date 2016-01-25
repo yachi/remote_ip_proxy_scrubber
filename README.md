@@ -48,7 +48,7 @@ config.middleware.insert_before(Rails::Rack::Logger, RemoteIpProxyScrubber.filte
 ```ruby
 # Add the following to config/application.rb or conifg/environments/*.rb
 
-config.middleware.insert_before(Rails::Rack::Logger, RemoteIpProxyScrubber.patched_logger)
+config.middleware.insert_before(Rails::Rack::Logger, RemoteIpProxyScrubber.patched_logger, config.log_tags)
 config.middleware.delete(Rails::Rack::Logger)
 ```
 
